@@ -1,0 +1,13 @@
+.metadata/.lock
+.metadata/.log
+.metadata/version.ini
+.metadata/.mylyn/repositories.xml.zip
+.metadata/
+RemoteSystemsTempFiles/.project
+Servers/.project
+Servers/.settings/org.eclipse.wst.server.core.prefs
+Servers/
+servletTest/.settings/
+servletTest/build/
+servletTest/.classpath
+servletTest/.project
