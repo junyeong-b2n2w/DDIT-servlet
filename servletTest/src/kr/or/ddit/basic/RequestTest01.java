@@ -2,6 +2,9 @@ package kr.or.ddit.basic;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -69,9 +72,58 @@ public class RequestTest01 extends HttpServlet {
 		out.println("2.요청 메서드 : "+ request.getMethod()+ "<br>");
 		out.println("3.ContextPath : "+ request.getContextPath()+ "<br>");
 		out.println("4.프로토콜 : "+ request.getProtocol()+ "<br>");
+		out.println("5.요청 URL : "+ request.getRequestURL()+ "<br>");
+		out.println("6.요청 URI : "+ request.getRequestURI()+ "<br>");
 		
 		out.println("</td></tr></table>");
 		
+		
+		//getParameterNames()메서드 ==> 파라미터명들만 반환한다.
+		// 반환되는 값들은 Enumeration 객체형으로 반환된다.
+		out.println("<hr>");
+		out.println("<h2>getParameterNames()메서드 결과값들 </h2>");
+		
+		
+		Enumeration<String> params = request.getParameterNames();
+		out.println("<ul>");
+		while(params.hasMoreElements()){ // 다음번째 데이터가 있는 지확인( 있으면 true, 없으ㅕㅁㄴ false)
+			String paramName = params.nextElement(); // 포인터를 당므번째로 이동하고 그자리의 데이터를 반환한다.
+			out.println("<li>"+paramName + "</li>");
+		}
+		out.println("</ul>");
+		
+		//getParameterMap() 메서드 ==> 전송된 모든 파라미터를 Map객체에 담아서 반환한다.
+		//	이 Map 객체의 key값은 '파라미터명' 이며 자료형은 String이고,
+		//				value값은 해당 파라미터의 '값'이며 자료형은 String[]형 이다.
+		out.println("<h2>getparameterMap() 메서드 처리결과</h2>");
+		out.println("<table boder='1'><tr><td>파라미터name</td><td>파라미터 value</td></tr>");
+
+		Map<String, String[]> paramMap = request.getParameterMap();
+		
+		//Map의 key값을 Iterator로 가져온다.
+		Iterator<String> it = paramMap.keySet().iterator();
+		
+		while(it.hasNext()){
+			String paramName = it.next();//Map의 key값 즉, 파라미터명을 구한다.
+			out.println("<tr><td>" + paramName + "</td>");
+			out.println("<td>");
+			
+			String[] paramValues = paramMap.get(paramName); // Map의 value값 즉, 파라미터 값
+			
+			if(paramValues==null || paramValues.length == 0){ // 파라미터가 없는경우
+				
+			}else if(paramValues.length == 1){ // 파라미터가 배열이 아닌경우 (파라미터명이 1개인경우)
+				out.println(paramValues[0]);
+			}else{ //파라미터가 배열인 경우
+				for(int i =0; i <paramValues.length; i++){
+					if(i>0) out.println(", ");
+					out.println(paramValues[i]);
+				}
+			}
+			out.println("</td></tr>");
+			
+		}// while 끝
+		out.print("</table>");
 		
 		out.println("</body>");
 		out.println("</html>");
