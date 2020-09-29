@@ -15,5 +15,8 @@
 	<input type="submit" value="파일전송">
 </form>
 
+<hr>
+<a href="<%=request.getContextPath()%>/UploadFileListServlet.do">업로드된 파일보기</a>
+
 </body>
 </html>
