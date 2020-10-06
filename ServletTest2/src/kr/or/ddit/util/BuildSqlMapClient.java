@@ -22,7 +22,7 @@ public class BuildSqlMapClient {
 			Resources.setCharset(charset);
 			
 			// 1-2. 환경 설정파일 읽어오기
-			Reader rd = Resources.getResourceAsReader("kr/or/ddit/ibatis/config/sqlMapConfig.xml");
+			Reader rd = Resources.getResourceAsReader("sqlMapConfig.xml");
 			
 			// 1-3. 위에서 읽어온 Reader객체를 이용하여 실제 환경설정을 완성한 후
 			//		SQL문을 호출해서 실행할 수 있는 객체를 생성한다.

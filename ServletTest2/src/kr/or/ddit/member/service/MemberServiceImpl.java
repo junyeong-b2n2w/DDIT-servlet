@@ -51,6 +51,10 @@ public class MemberServiceImpl implements IMemberService {
 		
 		return dao.updateMemeber2(paramMap);
 	}
+	@Override
+	public MemberVO getOneMember(String memId) {
+		return dao.getOneMember(memId);
+	}
 	
 	
 	

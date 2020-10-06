@@ -138,6 +138,20 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
+
+	@Override
+	public MemberVO getOneMember(String memId) {
+		MemberVO member=null;
+		try {
+			member = (MemberVO)smc.queryForObject("mymember.getOneMember",memId);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return member;
+	}
 	
 	
 }

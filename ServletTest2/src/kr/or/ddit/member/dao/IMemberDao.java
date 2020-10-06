@@ -54,6 +54,8 @@ public interface IMemberDao {
 	 */
 	public int getMemberCount(String memId);
 	
+	public MemberVO getOneMember(String memId);
+	
 	public int updateMemeber2(Map<String, String> paramMap);
 	
 }

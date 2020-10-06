@@ -20,6 +20,10 @@
 		SELECT * FROM MYMEMBER
 	</select>
 	
+	<select id="getOneMember" resultClass="memVO" parameterClass="String">
+		SELECT * FROM MYMEMBER where mem_id=#mem_id#
+	</select>
+	
 	<delete id="deleteMember" parameterClass="String" >
 		DELETE FROM MYMEMBER WHERE MEM_ID = #mem_id#
 	</delete>

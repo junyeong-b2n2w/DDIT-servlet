@@ -17,14 +17,12 @@
  	<!-- 숫자가 작을수록 우선순위가 높다 -->
  	<load-on-startup>1</load-on-startup> 
  </servlet>
-<servlet-mapping>
-	<servlet-name>driverLoader</servlet-name>
-	<url-pattern>/</url-pattern>
-</servlet-mapping>
+
 
  <servlet>
  	<servlet-name>testController</servlet-name>
- 	<servlet-class>kr.or.ddit.controller.TestController</servlet-class>
+ 	<servlet-class>kr.or.ddit.controller.WebController</servlet-class>
+<!--  	<servlet-class>kr.or.ddit.controller.TestController</servlet-class> -->
 
  </servlet>
 <servlet-mapping>

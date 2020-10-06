@@ -57,4 +57,6 @@ public interface IMemberService {
 	public int getMemberCount(String memId);
 	
 	public int updateMemeber2(Map<String, String> paramMap);
+	
+	public MemberVO getOneMember(String memId);
 }
