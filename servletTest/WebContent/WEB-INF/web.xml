@@ -9,61 +9,34 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <!-- filter 등록하기-->
-  
   <filter>
-  	<filter-name>CustomEncodingFilter</filter-name>
-  	<filter-class>kr.or.ddit.basic.filter.CustomEncodingFilter</filter-class>
-  	<init-param>
-  		<param-name>encoding</param-name>
-  		<param-value>UTF-8</param-value>
-  	</init-param>
+    <filter-name>CustomEncodingFilter</filter-name>
+    <filter-class>kr.or.ddit.basic.filter.CustomEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
-  	<filter-name>CustomEncodingFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
+    <filter-name>CustomEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
   <filter>
-  	<filter-name>TimerFilter</filter-name>
-  	<filter-class>kr.or.ddit.basic.filter.TimerFilter</filter-class>
+    <filter-name>TimerFilter</filter-name>
+    <filter-class>kr.or.ddit.basic.filter.TimerFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>TimerFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
+    <filter-name>TimerFilter</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
-  
-<!--   <filter> -->
-<!--   	<filter-name>filter01</filter-name> -->
-<!--   	<filter-class>kr.or.ddit.basic.filter.FilterTest01</filter-class> -->
-<!--   </filter> -->
-<!--   <filter-mapping> -->
-<!--   	<filter-name>filter01</filter-name> -->
-<!--   	<url-pattern>/*</url-pattern>   모든요청 :  /* -->
-  	
-<!--   </filter-mapping> -->
-  
-<!--   <filter> -->
-<!--   	<filter-name>filter02</filter-name> -->
-<!--   	<filter-class>kr.or.ddit.basic.filter.FilterTest02</filter-class> -->
-<!--  필터 초기화 파라미터 설정 => 필터의 init()메서드에서 처리한다. -->
-<!-- 	<init-param> -->
-<!-- 		<param-name>tester</param-name> -->
-<!-- 		<param-value>홍길동</param-value> -->
-<!-- 	</init-param> -->
-<!-- 	<init-param> -->
-<!-- 		<param-name>date</param-name> -->
-<!-- 		<param-value>2020-09-29</param-value> -->
-		
-<!-- 	</init-param> -->
-<!--   </filter> -->
-<!--   <filter-mapping> -->
-<!--   	<filter-name>filter02</filter-name> -->
-<!--   	<url-pattern>/basic/*</url-pattern>   /basic/ 이후의 모ㅡㄴ url에 필터를 사용한다.  -->
-<!--   </filter-mapping> -->
-  
-  <!-- Servlet 등록하기 -->
+  <filter>
+    <filter-name>requsetWrapperFilter</filter-name>
+    <filter-class>kr.or.ddit.basic.wrapper.RequsetWrapperFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>requsetWrapperFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <servlet>
     <servlet-name>servletTest01</servlet-name>
     <servlet-class>kr.or.ddit.basic.ServletTest01</servlet-class>
