@@ -11,3 +11,7 @@ servletTest/.settings/
 servletTest/build/
 servletTest/.classpath
 servletTest/.project
+ServletTest2/.classpath
+ServletTest2/.gitignore
+ServletTest2/.project
+ServletTest2/.settings/
